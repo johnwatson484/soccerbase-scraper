@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +15,11 @@ namespace SoccerbaseScraper
     {
         static void Main(string[] args)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+            | SecurityProtocolType.Tls11
+            | SecurityProtocolType.Tls12
+            | SecurityProtocolType.Ssl3;
+
             string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PlayersList.csv");
 
             List<Player> players = new List<Player>();
@@ -40,7 +46,7 @@ namespace SoccerbaseScraper
                     }
                 }
             }
-            
+
 
             using (StreamWriter sw = new StreamWriter(filePath))
             {
