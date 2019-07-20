@@ -102,7 +102,7 @@ namespace SoccerbaseScraper.Services
 
             WebPage PageResult = browser.NavigateToPage(new Uri(link));
 
-            var team = PageResult.Html.CssSelect(".last").First().InnerText.Trim('\r', '\n');
+            var team = PageResult.Html.CssSelect(".last").First().InnerText.Trim('\r', '\n').Trim();
 
             var playerList = PageResult.Html.CssSelect(".infoList").First();
 
