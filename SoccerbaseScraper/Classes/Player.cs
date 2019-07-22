@@ -27,13 +27,9 @@ namespace SoccerbaseScraper.Classes
         {
             FirstName = names[0];
 
-            if (names.Length > 1)
+            for (int i = 1; i < names.Length; i++)
             {
-                SecondName = names[1];
-            }
-            if (names.Length > 2)
-            {
-                SecondName = string.Format("{0} {1}", SecondName, names[2]);
+                SecondName += string.Format(" {0}", names[i]);
             }
         }
 
