@@ -13,7 +13,7 @@ namespace SoccerbaseScraper.Services
 {
     public class ScrapingService
     {
-        private static ScrapingBrowser browser;
+        private ScrapingBrowser browser;
 
         public void Scrape()
         {
@@ -60,10 +60,7 @@ namespace SoccerbaseScraper.Services
             Console.WriteLine("Setting security protocols");
             Console.ResetColor();
 
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
-                | SecurityProtocolType.Tls11
-                | SecurityProtocolType.Tls12
-                | SecurityProtocolType.Ssl3;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
 
         private List<Player> GetPlayers()

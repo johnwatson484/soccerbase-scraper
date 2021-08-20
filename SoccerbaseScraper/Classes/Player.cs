@@ -27,10 +27,14 @@ namespace SoccerbaseScraper.Classes
         {
             FirstName = names[0];
 
+            StringBuilder sb = new StringBuilder();
+
             for (int i = 1; i < names.Length; i++)
             {
-                SecondName += string.Format(" {0}", names[i]);
+                sb.Append(string.Format(" {0}", names[i]));
             }
+
+            SecondName = sb.ToString();
         }
 
         private void SetTeam(string team)
